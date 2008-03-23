@@ -2,7 +2,7 @@
 Summary:	D-Bus service providing high-level OBEX client and server side functionality
 Name:		obex-data-server
 Version:	0.3
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 #Source0Download: http://www.bluez.org/download.html
@@ -34,7 +34,7 @@ Bluetooth transport.
 %{__autoheader}
 %{__autoconf}
 %configure \
-	--disable-desktop-update \
+	--enable-system-config
 %{__make}
 
 %install
@@ -50,4 +50,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/obex-data-server
+/etc/dbus-1/system.d/obex-data-server.conf
 %{_datadir}/dbus-1/services/obex-data-server.service
