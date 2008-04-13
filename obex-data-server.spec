@@ -1,13 +1,13 @@
 # TODO locale file
 Summary:	D-Bus service providing high-level OBEX client and server side functionality
 Name:		obex-data-server
-Version:	0.3
-Release:	4
+Version:	0.3.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 #Source0Download: http://www.bluez.org/download.html
 Source0:	http://tadas.dailyda.com/software/%{name}-%{version}.tar.gz
-# Source0-md5:	d665127eb9d43d87b98cfff07b8fac60
+# Source0-md5:	4b5ded97cd9e7c62243062ec19a3ac9e
 URL:		http://wiki.muiline.com/obex-data-server
 BuildRequires:	GConf2-devel >= 2.6
 BuildRequires:	autoconf >= 2.50
