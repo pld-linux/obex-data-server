@@ -2,12 +2,12 @@
 Summary:	D-Bus service providing high-level OBEX client and server side functionality
 Summary(pl.UTF-8):	Usługa D-Bus dostarczająca wysokopoziomową funkcjonalność klientą i serwera OBEX
 Name:		obex-data-server
-Version:	0.3.1
+Version:	0.3.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://tadas.dailyda.com/software/%{name}-%{version}.tar.gz
-# Source0-md5:	4b5ded97cd9e7c62243062ec19a3ac9e
+# Source0-md5:	616611242732679e426c5f1748e526e3
 URL:		http://wiki.muiline.com/obex-data-server
 BuildRequires:	GConf2-devel >= 2.6
 BuildRequires:	autoconf >= 2.50
