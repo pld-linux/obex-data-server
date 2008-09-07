@@ -1,0 +1,11 @@
+--- obex-data-server-0.3.4/src/ods-bluez.c~	2008-06-27 17:21:14.000000000 +0200
++++ obex-data-server-0.3.4/src/ods-bluez.c	2008-09-07 14:01:24.110825236 +0200
+@@ -314,7 +314,7 @@
+ 		goto err;
+ 	}
+ 	
+-	sdp_record = sdp_extract_pdu ((uint8_t *)record_array->data, &scanned);
++	sdp_record = sdp_extract_pdu ((uint8_t *)record_array->data, record_array->len, &scanned);
+ 	
+ 	/* get channel for this service */
+ 	if (sdp_get_access_protos (sdp_record, &protos) != 0) {
