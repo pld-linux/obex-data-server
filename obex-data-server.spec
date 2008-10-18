@@ -3,7 +3,7 @@ Summary:	D-Bus service providing high-level OBEX client and server side function
 Summary(pl.UTF-8):	Usługa D-Bus dostarczająca wysokopoziomową funkcjonalność klientą i serwera OBEX
 Name:		obex-data-server
 Version:	0.4
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://tadas.dailyda.com/software/%{name}-%{version}.tar.gz
@@ -14,6 +14,7 @@ BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	bluez-libs-devel >= 4.2
 BuildRequires:	dbus-glib-devel >= 0.60
+BuildRequires:	gtk+2-devel
 BuildRequires:	openobex-devel >= 1.3
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
@@ -39,7 +40,8 @@ i FTP oraz transport Bluetooth.
 %{__automake}
 %{__autoheader}
 %{__autoconf}
-%configure
+%configure \
+	--enable-bip=gdk-pixbuf
 %{__make}
 
 %install
