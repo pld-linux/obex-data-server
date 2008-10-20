@@ -10,11 +10,12 @@ Source0:	http://tadas.dailyda.com/software/%{name}-%{version}.tar.gz
 # Source0-md5:	e019231cc14ee2da85c626104097cdd8
 URL:		http://wiki.muiline.com/obex-data-server
 BuildRequires:	GConf2-devel >= 2.6
-BuildRequires:	autoconf >= 2.50
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	bluez-libs-devel >= 4.2
-BuildRequires:	dbus-glib-devel >= 0.60
-BuildRequires:	gtk+2-devel
+BuildRequires:	dbus-glib-devel >= 0.70
+BuildRequires:	glib2-devel >= 1:2.10.0
+BuildRequires:	gtk+2-devel >= 1:2.0
 BuildRequires:	openobex-devel >= 1.3
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
