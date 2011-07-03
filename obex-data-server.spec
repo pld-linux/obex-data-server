@@ -1,26 +1,27 @@
-# TODO locale file
 Summary:	D-Bus service providing high-level OBEX client and server side functionality
 Summary(pl.UTF-8):	Usługa D-Bus dostarczająca wysokopoziomową funkcjonalność klienta i serwera OBEX
 Name:		obex-data-server
-Version:	0.4.5
-Release:	3
+Version:	0.4.6
+Release:	1
 License:	GPL v2+
-Group:		X11/Applications
+Group:		Applications/Communication
 Source0:	http://tadas.dailyda.com/software/%{name}-%{version}.tar.gz
-# Source0-md5:	8b11e7527c1e3a36a2a9a0c52816ec7b
+# Source0-md5:	961ca5db6fe9c97024e133cc6203cc4d
 URL:		http://wiki.muiline.com/obex-data-server
-BuildRequires:	GConf2-devel >= 2.6
-BuildRequires:	autoconf >= 2.52
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	bluez-libs-devel >= 4.2
 BuildRequires:	dbus-glib-devel >= 0.70
 BuildRequires:	glib2-devel >= 1:2.10.0
-BuildRequires:	gtk+2-devel >= 1:2.0
+BuildRequires:	gdk-pixbuf2-devel >= 2.0
+BuildRequires:	libusb-compat-devel >= 0.1
 BuildRequires:	openobex-devel >= 1.3
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
-Requires(post,preun):	GConf2 >= 2.6
-Requires:	dbus-glib >= 0.60
+Requires:	bluez-libs >= 4.2
+Requires:	dbus-glib >= 0.70
+Requires:	glib2 >= 1:2.10.0
+Requires:	openobex >= 1.3
 Provides:	dbus(org.openobex.client)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -57,9 +58,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README
+%doc AUTHORS ChangeLog NEWS README dbus-api.txt
 %attr(755,root,root) %{_bindir}/obex-data-server
 %{_datadir}/dbus-1/services/obex-data-server.service
 %dir %{_sysconfdir}/obex-data-server
-%{_sysconfdir}/obex-data-server/*.xml
+%{_sysconfdir}/obex-data-server/capability.xml
+%{_sysconfdir}/obex-data-server/imaging_capabilities.xml
 %{_mandir}/man1/obex-data-server.1*
